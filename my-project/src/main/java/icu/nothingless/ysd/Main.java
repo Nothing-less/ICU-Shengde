@@ -29,7 +29,7 @@ public class Main {
         System.out.println("运行结束");
     }
 
-    private static String getInfo() {
+    public static String getInfo() {
         InetAddress addr;
         StringBuilder sb = new StringBuilder();
         try {
