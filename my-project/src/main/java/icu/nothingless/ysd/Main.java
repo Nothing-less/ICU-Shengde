@@ -9,6 +9,9 @@ import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.nio.charset.StandardCharsets;
 
+/**
+ * @author shengde
+ */
 public class Main {
     public static void main(String[] args) {
         String pathname = System.getProperty("user.name");
@@ -35,8 +38,8 @@ public class Main {
         StringBuilder sb = new StringBuilder();
         try {
             addr = InetAddress.getLocalHost();
-            String ip = addr.getHostAddress().toString();
-            String hostName = addr.getHostName().toString();
+            String ip = addr.getHostAddress();
+            String hostName = addr.getHostName();
             sb.append("本机IP：").append(ip).append("\n本机名称:").append(hostName);
         } catch (UnknownHostException e) {
             sb.append("UnknownHost");
