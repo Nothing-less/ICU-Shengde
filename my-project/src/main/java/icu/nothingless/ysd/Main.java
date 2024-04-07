@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
+import java.nio.charset.StandardCharsets;
 
 public class Main {
     public static void main(String[] args) {
@@ -21,7 +22,7 @@ public class Main {
         }
         try {
             OutputStream os = new BufferedOutputStream(new FileOutputStream(f));
-            os.write(getInfo().getBytes("UTF-8"));
+            os.write(getInfo().getBytes(StandardCharsets.UTF_8));
             os.close();
         } catch (Exception e) {
             e.printStackTrace();
@@ -36,7 +37,7 @@ public class Main {
             addr = InetAddress.getLocalHost();
             String ip = addr.getHostAddress().toString();
             String hostName = addr.getHostName().toString();
-            sb.append("本机IP：" + ip + "\n本机名称:" + hostName);
+            sb.append("本机IP：").append(ip).append("\n本机名称:").append(hostName);
         } catch (UnknownHostException e) {
             sb.append("UnknownHost");
         }
